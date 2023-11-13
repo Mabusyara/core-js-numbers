@@ -106,10 +106,9 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  const temp =
-    (x1 * x2 + y1 * y2) /
-    ((x1 ** 2 + x2 ** 2) ** 0.5 * (y1 ** 2 + y2 ** 2) ** 0.5);
-  return Math.acos(temp);
+  const up = x1 * x2 + y1 * y2;
+  const down = (x1 ** 2 + y1 ** 2) ** 0.5 * (x2 ** 2 + y2 ** 2) ** 0.5;
+  return Math.acos(up / down);
 }
 
 /**
@@ -141,7 +140,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-  return parseInt(value, 10);
+  return Number(value);
 }
 
 /**
